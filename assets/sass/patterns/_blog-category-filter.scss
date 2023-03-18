@@ -1,0 +1,84 @@
+.peak-category-filter {
+  border: 2px solid var(--wp--preset--color--peak-blue);
+  border-radius: 1.5em;
+  padding: .5em 1em;
+  overflow: hidden;
+  font-size: var(--wp--preset--font-size--large);
+
+  & h4 {
+    margin: 0;
+    list-style: 1;
+  }
+  & a[href="#categories"] {
+    font-size: var(--wp--preset--font-size--large);
+    color: var(--wp--preset--color--peak-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF;
+    position: relative;
+    z-index: 1;
+
+    &:after{
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26.901' height='14.841'%3E%3Cpath fill='none' stroke='%23000edc' stroke-linecap='round' stroke-width='2' d='M25.488 1.413 12.464 13.427 1.413 1.413' data-name='Path 307'/%3E%3C/svg%3E");
+      font-size: 1em;
+      height: 1em;
+      width: auto;
+      transition: all .4s cubic-bezier(0.215, 0.610, 0.355, 1);
+      transform: scaleY(1);
+    }
+  }
+  & #categories {
+    position: relative;
+    z-index: 0;
+    display: none;
+    margin: 0;
+
+    & ul {
+      margin: 0;
+      padding: .25em 0 0 0;
+      list-style: none;
+    }
+
+    & li {
+      margin: 0;
+      padding: .25em 0;
+    }
+    & a {
+      color: var(--wp--preset--color--peak-blue);
+      font-size: var(--wp--preset--font-size--medium);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: .5em;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        border-radius: 50%;
+        width: .66em;
+        height: .66em;
+        border: 2px solid var(--wp--preset--color--peak-blue);
+      }
+    }
+    & a:hover:before {
+      background-color: #9Bf;
+      border-color: #FFF;
+      outline: 2px solid var(--wp--preset--color--peak-blue);
+    }
+    & li.current-cat a:before {
+      background-color: var(--wp--preset--color--peak-blue);
+      border-color: #FFF;
+      outline: 2px solid var(--wp--preset--color--peak-blue);
+    }
+  }
+}
+.peak-category-filter.expanded {
+
+  & a[href="#categories"]:after {
+    transform: scaleY(-1);
+  }
+  & #categories {
+    display: block;
+  }
+}

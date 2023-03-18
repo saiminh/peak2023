@@ -1,0 +1,36 @@
+.page-template-page-dark .is-root-container {
+  --wp--preset--color--base: #000;
+  --wp--preset--color--contrast: #FFF;
+  background-color: var(--wp--preset--color--base, #000);
+  color: var(--wp--preset--color--contrast);
+}
+.edit-post-visual-editor__post-title-wrapper {
+  margin-top:0;
+}
+/* The title that isn't necessarily the h1 */
+.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper h1 {
+  max-width: var(--wp--style--global--wide-size);
+  position: relative;
+  font-size: var(--wp--preset--font-size--large);
+}
+.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper h1:before {
+  content: 'Post title';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  font-size: .3em;
+  color: grey;
+}
+
+font[size="1"] {
+  z-index: 99999;
+  position: absolute;
+}
+
+.peak-faq-answer {
+  height: auto!important;
+  padding-top: 1em;
+}
+.peak-faq-answer * {
+  transform: translateY(0)!important;
+}

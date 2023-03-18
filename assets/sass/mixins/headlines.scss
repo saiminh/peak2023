@@ -1,0 +1,82 @@
+@use './mqs.scss' as mq;
+
+@mixin headline-equal {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding-top: .2em;
+  padding-bottom: .125em;
+}
+@mixin headline-top {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding-top: .4em;
+  padding-bottom: .8em;
+}
+@mixin headline-link-cirlearrow-right {
+  padding-left: 0;
+  transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  &:after {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 34.414 34.645%27%3E%3Cg fill=%27none%27 stroke=%27%23ff00ff%27 stroke-linecap=%27round%27 stroke-width=%272%27 data-name=%27Group 575%27%3E%3Cpath d=%27M1 18.528h31.559%27 data-name=%27Line 115%27/%3E%3Cpath d=%27M17.122 1.413 33 18.626 17.122 33.232%27 data-name=%27Path 279%27/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 0.66em;
+    width: 0.66em;
+    padding: .125em;
+    display: inline-block;
+    border: .033em solid var(--wp--preset--color--peak-pink);
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+  }
+  
+  @include mq.tablet-up {
+    &:hover {
+      padding-left: .25em;
+    }
+    &:after {
+      margin-left: .25em;
+      border: 2px solid var(--wp--preset--color--peak-pink);
+      position: relative;
+      top: 0.1em;
+      transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    &:hover:after {
+      background-position: 90% 50%;
+    }
+  }
+}
+@mixin headline-link-cirlearrow-left {
+
+  &:before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 34.414 34.645%27%3E%3Cg fill=%27none%27 stroke=%27%23ff00ff%27 stroke-linecap=%27round%27 stroke-width=%272%27 data-name=%27Group 575%27%3E%3Cpath d=%27M1 18.528h31.559%27 data-name=%27Line 115%27/%3E%3Cpath d=%27M17.122 1.413 33 18.626 17.122 33.232%27 data-name=%27Path 279%27/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 0.66em;
+    width: 0.66em;
+    padding: .125em;
+    display: inline-block;
+    border: .033em solid var(--wp--preset--color--peak-pink);
+    border-radius: 50%;
+    position: relative;
+    top: 0.1em;
+    transform: rotate(180deg);
+    margin-right: .25em;
+  }
+  
+  @include mq.tablet-up {
+    &:before {
+      border: 2px solid var(--wp--preset--color--peak-pink);
+      transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    &:hover:before {
+      background-position: 90% 50%;
+    }
+  }
+}

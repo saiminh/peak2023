@@ -1,0 +1,46 @@
+/*
+Theme Name: Peak 2023
+Author: Simon Flöter
+Author URI: https://floter.design
+Description: Peak 2023 is based on Twenty Twenty Three, the default theme for WordPress 6.1. It is the theme for 
+Requires at least: 6.1
+Tested up to: 6.1
+Requires PHP: 5.6
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Text Domain: peak2023
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, accessibility-ready, blog, portfolio, news
+*/
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--wp--preset--color--contrast);
+}
+
+.wp-site-blocks {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.wp-site-blocks > * + * {
+  margin-block-start: 0;
+}
+.wp-block-separator {
+  border-bottom: 1px solid var(--wp--preset--color--contrast, #000);
+}
+@media (min-width: 600px) {
+  .wp-block-post-template.is-flex-container.is-flex-container.columns-4 > li {
+    width: calc(25% - .938em);
+  }
+}
+.page-template-page-dark {
+  --wp--preset--color--base: #000;
+  --wp--preset--color--contrast: #FFF;
+  background-color: var(--wp--preset--color--base, #000);
+  & .has-contrast-background-color {
+    --wp--preset--color--base: #FFF;
+    --wp--preset--color--contrast: #000;
+
+  }
+}

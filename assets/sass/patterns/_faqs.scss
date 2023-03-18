@@ -1,0 +1,83 @@
+.peak-faq {
+  font-size: var(--wp--preset--font-size--large);
+  border-top: 1px solid;
+  padding: .5em 0;
+  margin-block-start: 0!important;
+}
+*:not(.peak-faq) + .peak-faq {
+  margin-block-start: 1em!important;
+}
+.peak-faq-question {
+  font-size: var(--wp--preset--font-size--large);
+  transform: translateX(0);
+  transition: all .4s cubic-bezier(0.215, 0.610, 0.355, 1);
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+  align-items: center;
+  
+  &:hover {
+    transform: translateX(.5em);
+  }
+  .peak-faq-open &, .peak-faq-open &:hover {
+    transform: translateX(0);
+  }
+
+  &:after {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg id='Group_573' data-name='Group 573' transform='translate(-710.5 -2534)'%3E%3Cg id='Ellipse_3' data-name='Ellipse 3' transform='translate(710.5 2534)' fill='none' stroke='%23000edc' stroke-width='2'%3E%3Ccircle cx='32' cy='32' r='32' stroke='none'/%3E%3Ccircle cx='32' cy='32' r='31' fill='none'/%3E%3C/g%3E%3Cg id='Group_313' data-name='Group 313' transform='translate(724.5 2548)'%3E%3Cline id='Line_1' data-name='Line 1' x2='36' transform='translate(0 18.252)' fill='none' stroke='%23000edc' stroke-linecap='round' stroke-width='2'/%3E%3Cline id='Line_123' data-name='Line 123' x2='36' transform='translate(18.252 0) rotate(90)' fill='none' stroke='%23000edc' stroke-linecap='round' stroke-width='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 1.25em;
+    height: 1.25em;
+    flex: 0 0 1.25em;
+    transition: all .4s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  &:hover::after{
+    transform: translateX(-.5em) rotate(90deg);
+  }
+}
+.peak-faq-open .peak-faq-question:after {
+  transform: translateX(-.5em) rotate(45deg);
+}
+.peak-faq-open .peak-faq-question:after,
+.peak-faq-open .peak-faq-question:hover:after {
+  transform: translateX(0) rotate(45deg);
+}
+
+.peak-faq-answer {
+  margin-block-start: 0!important;
+  height: 0;
+  overflow: hidden;
+
+  & a, & a:visited {
+    font-weight: 400;
+    text-decoration: underline;
+  }
+  & br {
+    margin: 0 0 .5em 0;
+  } 
+  & br + br {
+    display: none;
+  }
+  & * {
+    transform: translateY(-1.5em);
+    transition: all .4s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  & *:first-child {
+    padding-top: 1em;
+  }
+  & *:last-child {
+    padding-bottom: 1em;
+  }
+}
+.peak-faq-open .peak-faq-answer {
+  height: auto;
+  
+  & * {
+    transform: translateY(0px);
+  }
+}
