@@ -1,7 +1,7 @@
 @use '../mixins/headlines.scss' as hstyle;
 
 .single {
-  --text-width: 36em;
+  --text-width: 40rem;
 }
 
 .single .wp-block-post-title {
@@ -16,6 +16,12 @@
     max-width: 100%;
   }
 }
+.single .wp-block-post-content ul,
+.single .wp-block-post-content figure,
+.single .wp-block-post-content img {
+  max-width: var(--text-width);
+}
+
 .peak-single-back-link {
   border-top: 1px solid var(--wp--preset--color--contrast);
   border-bottom: 1px solid var(--wp--preset--color--contrast);
