@@ -843,6 +843,10 @@ footer.wp-block-template-part a {
   padding-top: 0.5em;
 }
 
+.wp-block-post-template .wp-block-post .wp-block-post-title a {
+  display: block;
+}
+
 .single:not(.single-founders, .single-teammember) {
   --text-width: 40rem;
 }
