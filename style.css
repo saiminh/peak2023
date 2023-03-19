@@ -833,6 +833,12 @@ footer.wp-block-template-part a {
     transform: translateY(0);
   }
 }
+.wp-block-query-pagination {
+  justify-content: space-between;
+  border-top: 1px solid;
+  padding-top: 0.5em;
+}
+
 .single {
   --text-width: 40rem;
 }
