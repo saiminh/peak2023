@@ -1,14 +1,14 @@
 @use '../mixins/headlines.scss' as hstyle;
 
-.single {
+.single:not(.single-founders, .single-teammember) {
   --text-width: 40rem;
 }
 
-.single .wp-block-post-title {
+.single:not(.single-founders, .single-teammember) .wp-block-post-title {
   border: none;
   font-size: var(--wp--preset--font-size--xx-large);
 }
-.single .wp-block-post-content p {
+.single:not(.single-founders, .single-teammember) .wp-block-post-content p {
   max-width: var(--text-width);
 
   &:nth-of-type(1), &:nth-of-type(2) {
@@ -16,9 +16,9 @@
     max-width: 100%;
   }
 }
-.single .wp-block-post-content ul,
-.single .wp-block-post-content figure,
-.single .wp-block-post-content img {
+.single:not(.single-founders, .single-teammember) .wp-block-post-content ul,
+.single:not(.single-founders, .single-teammember) .wp-block-post-content figure,
+.single:not(.single-founders, .single-teammember) .wp-block-post-content img {
   max-width: var(--text-width);
 }
 
@@ -31,11 +31,11 @@
     @include hstyle.headline-link-cirlearrow-left;
   }
 }
-.single .wp-block-post-author,
-.single .wp-block-post-date {
+.single:not(.single-founders, .single-teammember) .wp-block-post-author,
+.single:not(.single-founders, .single-teammember) .wp-block-post-date {
   font-weight: 700;
 }
-.single .wp-block-post-featured-image {
+.single:not(.single-founders, .single-teammember) .wp-block-post-featured-image {
   margin-top: -50px;
   margin-bottom: -50px;
   width: var(--text-width);
@@ -63,7 +63,7 @@
     z-index: 1;
   }
 }
-.single {
+.single:not(.single-founders, .single-teammember) {
   & .wp-block-post-featured-image,
   & .wp-block-post-title,
   & .wp-block-post-author,
@@ -87,4 +87,13 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.custompost-backlink {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding: .25em 0;
+}
+.custompost-backlink a {
+  @include hstyle.headline-link-cirlearrow-left;
 }
