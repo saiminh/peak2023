@@ -1,0 +1,98 @@
+@use '../mixins/mqs.scss' as mq;
+
+.single-teammember {
+  --card-text-spacing: 15px;
+  transform-origin: 50% 100%;
+  animation: teammember-in .5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+
+  & .wp-block-post-featured-image {
+    margin: 0;
+    aspect-ratio: 32/36;
+    width: 100%;
+  
+    @include mq.tablet-up {
+      aspect-ratio: 32/48;
+    }
+  
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    & figcaption {
+      display: none;
+    }
+  }
+  & .wp-block-post-title {
+    font-size: var(--wp--preset--font-size--large, 24px);
+    padding: .4em 0 .8em 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin: var(--card-text-spacing) 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  & .card-subtitle {
+    font-size: var(--wp--preset--font-size--medium, 20px);
+    min-height: 2em;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    align-items: center;
+    padding-top: var(--card-text-spacing);
+  }
+  & .wp-block-post-title ,
+  & .card-subtitle {
+    // margin-left: var(--card-text-spacing);
+    // margin-right: var(--card-text-spacing);
+    position: relative;
+  }
+  & .card-subtitle:before {
+    top: -1px;
+  }
+  & .card-full-content-coin-title,
+  & .card-subtitle {
+    display: none;
+  }
+  & .card-full-content-coin {
+    display: inline-block;
+
+    & img {
+      width: var(--toggle-size);
+    }
+  }
+  @include mq.tablet-up {
+    & {
+      --card-photo-height: 32vw;
+      --card-text-spacing: 20px;
+      --full-popup-photo-width: 33%;
+      position: relative;
+
+      & .teammember-full-content-coins {
+        display: inherit;
+      }
+
+      & .wp-block-post-featured-image {
+        float: left;
+        width: var(--full-popup-photo-width);
+        aspect-ratio: 32/48;
+      }
+      & .wp-block-post-content {
+        margin-left: calc( var(--full-popup-photo-width) + var(--card-text-spacing) );
+      }
+      & .wp-block-post-title {
+        margin-top: 0;
+        margin-left: calc( var(--full-popup-photo-width) + var(--card-text-spacing) );
+        margin-right: 0;
+        font-size: var(--wp--preset--font-size--xx-large);
+        line-height: 1.2;
+        padding: .5em 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
