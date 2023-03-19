@@ -1,6 +1,9 @@
 @use '../mixins/mqs.scss' as mq;
 
-:not( .peak-founders-query-loop, .peak-founders-query-loop-home, .peak-teammembers-query-loop, .peak-teammembers-query-loop-home ) > .wp-block-post-template {
+:not( .peak-founders-query-loop, 
+      .peak-founders-query-loop-home, 
+      .peak-teammembers-query-loop, 
+      .peak-teammembers-query-loop-home ) > .wp-block-post-template {
   --highlight-color: var(--wp--preset--color--peak-blue);
   --highlight-contrast-color: var(--wp--preset--color--white, #FFF);
 
@@ -9,11 +12,20 @@
   grid-template-rows: fit-content(25%);
   gap: calc(var(--wp--preset--spacing--outer) * 2);
 
+  @include mq.mobile-only {
+    display: flex;
+    flex-direction: column;
+  }
+
   //most common post
   .wp-block-post {
     margin-top: 1em;
     grid-column: span 3;
     position: relative;
+
+    @include mq.mobile-only {
+      margin-top: 0;
+    }
 
     &:before {
       content: '';
@@ -106,14 +118,15 @@
   .wp-block-post:nth-child(9) {
     grid-row: span 3;
   }
-  & .wp-block-post:nth-child(3)  {
+  & .wp-block-post:nth-child(2n)  {
     --highlight-color: var(--wp--preset--color--peak-green);
     --highlight-contrast-color: #000;
   } 
-  & .wp-block-post:nth-child(6), & .wp-block-post:nth-child(10) {
+  & .wp-block-post:nth-child(3n) {
     --highlight-color: var(--wp--preset--color--peak-pink);
+    --highlight-contrast-color: #FFF;
   } 
-  & .wp-block-post:nth-child(3) {
+  & .wp-block-post:nth-child(4n) {
     --highlight-color: var(--wp--preset--color--contrast);
     --highlight-contrast-color: #FFF;
   } 
