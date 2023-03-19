@@ -1,4 +1,5 @@
 @use '../mixins/headlines.scss' as hstyle;
+@use '../mixins/mqs.scss' as mq;
 
 .single:not(.single-founders, .single-teammember) {
   --text-width: 40rem;
@@ -20,6 +21,15 @@
 .single:not(.single-founders, .single-teammember) .wp-block-post-content figure,
 .single:not(.single-founders, .single-teammember) .wp-block-post-content img {
   max-width: var(--text-width);
+  width: 100%;
+  box-sizing: border-box;
+}
+.single:not(.single-founders, .single-teammember) .wp-block-post-content ul {
+  padding-left: 1em;
+
+  & > li + li {
+    margin-top: .5em;
+  }
 }
 
 .peak-single-back-link {
@@ -36,32 +46,36 @@
   font-weight: 700;
 }
 .single:not(.single-founders, .single-teammember) .wp-block-post-featured-image {
-  margin-top: -50px;
-  margin-bottom: -50px;
-  width: var(--text-width);
-  position: relative;
-  z-index: -1;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-image: linear-gradient(to bottom, var(--wp--preset--color--base), transparent);
-    z-index: 1;
+  @include mq.tablet-up {
+    margin-top: -50px;
+    margin-bottom: -50px;
+    width: var(--text-width);
+    position: relative;
+    z-index: -1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background-image: linear-gradient(to bottom, var(--wp--preset--color--base), transparent);
+      z-index: 1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background-image: linear-gradient(to top, var(--wp--preset--color--base), transparent);
+      z-index: 1;
+    }
   }
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background-image: linear-gradient(to top, var(--wp--preset--color--base), transparent);
-    z-index: 1;
-  }
+
 }
 .single:not(.single-founders, .single-teammember) {
   & .wp-block-post-featured-image,
