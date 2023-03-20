@@ -38,18 +38,23 @@
       z-index: -1;
     }
 
-    &:not(:nth-child(10n + 1), :nth-child(10n + 9)) .wp-block-post-featured-image {
+    &:not(:nth-child(10n + 1), :nth-child(10n + 9)) .wp-block-post-featured-image,
+    body.home & .wp-block-post-featured-image {
       display: none;
 
       & + .wp-block-separator {
         margin-top: 0;
       }
     }
-    &:nth-child(10n + 1), :nth-child(10n + 9) {
+    body:not(.home) &:nth-child(10n + 1), :nth-child(10n + 9) {
       & > .wp-block-group > hr:first-child:not(.wp-block-post-featured-image) {
         aspect-ratio: 1.5;
         width: 100%;
         height: auto;
+
+        @include mq.mobile-only {
+          height: 60vw;
+        }
 
         &:before {
           content: '';
