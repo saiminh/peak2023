@@ -45,6 +45,26 @@
         margin-top: 0;
       }
     }
+    &:nth-child(1), :nth-child(9), :nth-child(20) {
+      & > .wp-block-group > hr:first-child:not(.wp-block-post-featured-image) {
+        aspect-ratio: 1.5;
+        width: 100%;
+        height: auto;
+
+        &:before {
+          content: '';
+          background-image: url("https://picsum.photos/1120/920");
+          background-repeat: no-repeat;
+          background-size: cover;
+          color: #FFF;
+          position: relative;
+          width: 100%;
+          height: calc( 100% - 1em );
+          margin-bottom: 1em;
+          display: block;
+        }
+      }
+    }
   }
   @include mq.tablet-up {
 
@@ -110,9 +130,9 @@
   .wp-block-post:nth-child(1) {
     grid-row: span 3;
   }
-  .wp-block-post:nth-child(5),
-  .wp-block-post:nth-child(6),
-  .wp-block-post:nth-child(7) {
+  .wp-block-post:nth-child(7n + 5),
+  .wp-block-post:nth-child(7n + 6),
+  .wp-block-post:nth-child(7n + 7) {
     grid-column: span 2;
   }
   .wp-block-post:nth-child(9) {
