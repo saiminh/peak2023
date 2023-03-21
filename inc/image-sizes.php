@@ -29,22 +29,22 @@ function my_content_image_sizes_attr( $sizes, $size, $image_src, $image_meta, $a
   $height = $size[1];
   
   if ( get_post_type() == 'teammember' && is_front_page() ) {
-    $sizes = '(min-width: 600) 14vw, 30vw';
+    $sizes = '(min-width: 600px) 14vw, 30vw';
   }
   if ( get_post_type() == 'teammember' && !is_front_page() ) {
-    $sizes = '(min-width: 600) 24vw, calc(100vw - 30px)';
+    $sizes = '(min-width: 600px) 24vw, 98vw';
   }
   if ( get_post_type() == 'founders' && is_front_page() ) {
-    $sizes = '(min-width: 600) 40vw, 94vw';
+    $sizes = '(min-width: 600px) 40vw, 94vw';
   }
   if ( get_post_type() == 'founders' && !is_front_page() ) { //founder photo on founders page
-    $sizes = '(min-width: 600) 32vw, 93vw';
+    $sizes = '(min-width: 600px) 32vw, 93vw';
   }
   if ( get_post_type() == 'post' ) {
-    $sizes = '(min-width: 600) 46vw, 90vw';
+    $sizes = '(min-width: 600px) 46vw, 90vw';
   }
   if ( is_single() ) {
-    $sizes = '(min-width: 600) 40rem, 90vw';
+    $sizes = '(min-width: 600px) 40rem, 90vw';
   }
 
   return $sizes;
