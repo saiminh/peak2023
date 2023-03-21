@@ -28,14 +28,17 @@ function my_content_image_sizes_attr( $sizes, $size, $image_src, $image_meta, $a
   $width = $size[0];
   $height = $size[1];
   
-  if ( $width === 560 && $height === 460 ) { //founder photo
-    $sizes = '(min-width: 600) 33vw, 93vw';
-  }
   if ( get_post_type() == 'teammember' && is_front_page() ) {
     $sizes = '(min-width: 600) 14vw, 30vw';
   }
+  if ( get_post_type() == 'teammember' && !is_front_page() ) {
+    $sizes = '(min-width: 600) 24vw, calc(100vw - 30px)';
+  }
   if ( get_post_type() == 'founders' && is_front_page() ) {
     $sizes = '(min-width: 600) 40vw, 94vw';
+  }
+  if ( get_post_type() == 'founders' && !is_front_page() ) { //founder photo on founders page
+    $sizes = '(min-width: 600) 32vw, 93vw';
   }
   if ( get_post_type() == 'post' ) {
     $sizes = '(min-width: 600) 46vw, 90vw';
