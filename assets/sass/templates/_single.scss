@@ -35,7 +35,7 @@
 .peak-single-back-link {
   border-top: 1px solid var(--wp--preset--color--contrast);
   border-bottom: 1px solid var(--wp--preset--color--contrast);
-  padding: .25em 0;
+  padding: .2em 0 .3em 0;
 
   & a {
     @include hstyle.headline-link-cirlearrow-left;

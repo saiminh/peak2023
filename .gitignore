@@ -1,3 +1,8 @@
 node_modules
 vendor
 *.DS_Store
+
+.DS_Store
+
+#files
+assets/fonts/fontarchive

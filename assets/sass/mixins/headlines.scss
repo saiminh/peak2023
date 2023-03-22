@@ -3,8 +3,8 @@
 @mixin headline-equal {
   border-top: 1px solid;
   border-bottom: 1px solid;
-  padding-top: .2em;
-  padding-bottom: .125em;
+  padding-top: .125em;
+  padding-bottom: .25em;
 }
 @mixin headline-top {
   border-top: 1px solid;
@@ -32,7 +32,7 @@
     width: 0.66em;
     padding: .125em;
     display: inline-block;
-    border: .033em solid var(--wp--preset--color--peak-pink);
+    border: .035em solid var(--wp--preset--color--peak-pink);
     border-radius: 50%;
     position: absolute;
     right: 0;
@@ -70,7 +70,7 @@
     width: 0.66em;
     padding: .125em;
     display: inline-block;
-    border: .033em solid var(--wp--preset--color--peak-pink);
+    border: .035em solid var(--wp--preset--color--peak-pink);
     border-radius: 50%;
     position: relative;
     top: 0.1em;
@@ -80,7 +80,7 @@
   
   @include mq.tablet-up {
     &:before {
-      border: 2px solid var(--wp--preset--color--peak-pink);
+      border: 0.035em solid var(--wp--preset--color--peak-pink);
       transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
