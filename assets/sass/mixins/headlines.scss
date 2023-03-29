@@ -36,12 +36,13 @@
     border-radius: 50%;
     position: absolute;
     right: 0;
+    top: 0.3325em;
   }
   
   @include mq.tablet-up {
-    &:hover {
-      padding-left: .25em;
-    }
+    // &:hover {
+    //   padding-left: .25em;
+    // }
     &:after {
       margin-left: .25em;
       border: 2px solid var(--wp--preset--color--peak-pink);

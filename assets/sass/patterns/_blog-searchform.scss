@@ -1,4 +1,14 @@
+@use '../mixins/mqs.scss' as mq;
 .peak-blog-search {
+
+  @include mq.tablet-up {
+    width: 100%;
+    transition: width .4s cubic-bezier(0.215, 0.610, 0.355, 1);
+  
+    &.search-focused {
+      width: calc( 66.6vw - 1.5rem);
+    }
+  }
 
   & .wp-block-search__input {
     border: 2px solid var(--wp--preset--color--peak-blue);
@@ -6,6 +16,10 @@
     padding: .5em 1em;
     overflow: hidden;
     font-size: var(--wp--preset--font-size--large);
+
+    &:focus {
+      outline: none;
+    }
 
     &::-webkit-input-placeholder { /* Edge */
       color: var(--wp--preset--color--peak-blue);

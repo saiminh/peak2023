@@ -25,14 +25,16 @@
       height: 1em;
       width: auto;
       transition: all .4s cubic-bezier(0.215, 0.610, 0.355, 1);
+      transform-origin: 50% 50%;
       transform: scaleY(1);
     }
   }
   & #categories {
     position: relative;
     z-index: 0;
-    display: none;
     margin: 0;
+    display: none; // Hide by default show via JS
+    transition: height .4s cubic-bezier(0.215, 0.610, 0.355, 1);
 
     & ul {
       margin: 0;
