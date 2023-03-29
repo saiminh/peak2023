@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   cats.style.display = 'block';
   let origHeight = cats.offsetHeight + 'px';
   cats.style.height = '0px';
+  let isHovering = false;
 
   function toggleCatFilter(e) {
     e.preventDefault();
@@ -12,12 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
     cats.style.height = isOpen ? '0px' : origHeight;
   }
   catfilter && catfilter.querySelector('a[href="#categories"]').addEventListener('click', function(e) {
-    toggleCatFilter(e);
+    !isHovering ? toggleCatFilter(e) : e.preventDefault();
   })
   catfilter && catfilter.addEventListener('mouseenter', function(e) {
+    isHovering = true;
     toggleCatFilter(e);
   })
   catfilter && catfilter.addEventListener('mouseleave', function(e) {
+    isHovering = false;
     toggleCatFilter(e);
   })
 
