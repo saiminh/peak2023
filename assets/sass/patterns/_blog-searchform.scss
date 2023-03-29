@@ -12,7 +12,7 @@
 
   & .wp-block-search__input {
     border: 2px solid var(--wp--preset--color--peak-blue);
-    border-radius: 1.5em;
+    border-radius: calc( var(--wp--preset--font-size--large) * 1.2 );
     padding: .5em 1em;
     overflow: hidden;
     font-size: var(--wp--preset--font-size--large);
