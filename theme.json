@@ -133,6 +133,15 @@
 								"file:./assets/fonts/Lazzer-Medium.woff2"
 							]
 						},
+            {
+							"fontFamily": "Lazzer",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/Lazzer-Medium.woff2"
+							]
+						},
 						{
               "fontFamily": "Lazzer",
               "fontStretch": "normal",
@@ -245,7 +254,7 @@
 			"core/post-date": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)",
-					"fontWeight": "400"
+					"fontWeight": "500"
 				},
 				"elements": {
 					"link": {
@@ -342,7 +351,7 @@
 			"core/query-pagination": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)",
-					"fontWeight": "400"
+					"fontWeight": "500"
 				},
 				"elements": {
 					"link": {
