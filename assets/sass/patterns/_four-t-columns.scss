@@ -5,6 +5,7 @@
 
   position: relative;
   padding-top: 2em;
+  counter-reset: four-ts;
 
   @media (min-width: 1000px) {
     width: 90%;
@@ -22,11 +23,11 @@
 
   & .wp-block-heading {
     position: relative;
-    counter-increment: section;
+    counter-increment: four-ts;
     padding-right: 1.25em;
   }
   & .wp-block-heading:after {
-    content: counter(section);
+    content: counter(four-ts);
     height: 1em;
     width: 1em;
     font-size: .5em;
