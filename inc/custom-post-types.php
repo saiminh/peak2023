@@ -17,7 +17,7 @@ function create_posttype() {
       'show_ui' => true,
       'show_in_rest' => true,
       'has_archive' => 'teammembers',
-      'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'permalinks', 'featured_image' ),
+      'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'permalinks' ),
     )
   );
   register_post_type( 'founders',
