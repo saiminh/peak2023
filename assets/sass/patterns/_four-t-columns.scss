@@ -1,9 +1,14 @@
+@use '../mixins/mqs.scss' as mq;
+
 .four-t-columns {
   --gap: 2em;
 
   position: relative;
   padding-top: 2em;
-  width: 90%;
+
+  @media (min-width: 1000px) {
+    width: 90%;
+  }
   
   &, & > .wp-block-column > .wp-block-columns {
     gap: var(--gap)!important;
@@ -18,6 +23,7 @@
   & .wp-block-heading {
     position: relative;
     counter-increment: section;
+    padding-right: 1.25em;
   }
   & .wp-block-heading:after {
     content: counter(section);
