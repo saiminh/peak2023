@@ -9,6 +9,8 @@
 
   @media (min-width: 1000px) {
     width: 90%;
+    position: relative;
+    left: -1em;
   }
   
   &, & > .wp-block-column > .wp-block-columns {
