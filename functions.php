@@ -27,7 +27,7 @@ function peak2023_scripts() {
     wp_enqueue_script( 'faqs', get_template_directory_uri().'/assets/js/faqs.min.js', array(), false, true );
   }
   if( is_home() || is_archive() || is_search() ) {
-    wp_enqueue_script( 'faqs', get_template_directory_uri().'/assets/js/cat-filter.min.js', array(), false, true );
+    wp_enqueue_script( 'faqs', get_template_directory_uri().'/assets/js/cat-filter.js', array(), false, true );
   }
 }
 add_action( 'wp_enqueue_scripts', 'peak2023_scripts' );

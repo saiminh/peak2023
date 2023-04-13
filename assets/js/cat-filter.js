@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     isOpen ? catfilter.classList.remove('expanded') : catfilter.classList.add('expanded');
     cats.style.height = isOpen ? '0px' : origHeight;
   }
-  catfilter && catfilter.querySelector('a[href="#categories"]').addEventListener('click', function(e) {
-    !isHovering ? toggleCatFilter(e) : e.preventDefault();
+  catfilter && catfilter.querySelector('a[href="#categories"]').addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    !isHovering ? toggleCatFilter(e) : null;
   })
   catfilter && catfilter.addEventListener('mouseenter', function(e) {
     isHovering = true;
