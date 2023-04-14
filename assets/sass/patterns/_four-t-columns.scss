@@ -70,7 +70,9 @@
     opacity: 0;
     transition: all 0.5s ease-out;
     
-    @include mq.mobile-only {
+  }
+  @include mq.mobile-only {
+    &:after {
       right: calc(-1 * var(--wp--preset--spacing--outer));
     }
   }
